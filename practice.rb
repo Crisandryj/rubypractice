@@ -1,21 +1,20 @@
-user = ARGV.first
-prompt = '>'
+#gets file name
+filename = ARGV.first
+#same prompt value to prompt variable
+prompt = ">"
+#opens file in prompt and saves to txt
+txt = File.open(filename)
+#shows files name
+puts "Here's your file: #{filename}"
 
-puts "Hi #{user}, I'm the #{$0} script."
-puts "I'd like to ask you a few questions."
-puts "Do you like me #{user}?"
-print prompt
-likes = STDIN.gets.chomp()
+#reads whats in file
+puts txt.read()
 
-puts "Where do you live #{user}?"
+#does it again
+puts "I'll also ask you to type it again"
 print prompt
-lives = STDIN.gets.chomp()
-puts "What kind of computer do you have?"
-print prompt
-computer = STDIN.gets.chomp()
+file_again = STDIN.gets.chomp()
 
-puts <<MESSAGE
-Alright, you said #{likes} about likeing me.
-You live in #{lives}. Not sure where that is.
-And you have a #{computer}. Nice.
-MESSAGE
+txt_again = File.open(file_again)
+
+puts txt_again.read()
