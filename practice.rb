@@ -1,20 +1,20 @@
-#gets file name
 filename = ARGV.first
-#same prompt value to prompt variable
-prompt = ">"
-#opens file in prompt and saves to txt
-txt = File.open(filename)
-#shows files name
-puts "Here's your file: #{filename}"
 
-#reads whats in file
-puts txt.read()
+script = $0
 
-#does it again
-puts "I'll also ask you to type it again"
-print prompt
-file_again = STDIN.gets.chomp()
+puts "We're goign to erase #{filename}."
+puts "if you don't want that, hit CRTL-C."
+puts "If you do want that, hit RETURN."
 
-txt_again = File.open(file_again)
+print "? "
+STDIN.gets
 
-puts txt_again.read()
+puts "Opening the file..."
+target = File.open(filename, "w")
+
+puts "Truncating the file. Goodbye!"
+target.truncate(target.size)
+
+puts "Now I'm going to ask you for three lines."
+#print 
+print "line1: "; line1 = STDIN.gets.chomp()
