@@ -11,7 +11,7 @@ STDIN.gets
 
 puts "Opening the file..."
 target = File.open(filename, "w")
-
+#puts
 puts "Truncating the file. Goodbye!"
 target.truncate(target.size)
 #puts
