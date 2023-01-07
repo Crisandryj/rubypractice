@@ -14,7 +14,7 @@ target = File.open(filename, "w")
 
 puts "Truncating the file. Goodbye!"
 target.truncate(target.size)
-
+#puts
 puts "Now I'm going to ask you for three lines."
-#print 
+#print
 print "line1: "; line1 = STDIN.gets.chomp()
