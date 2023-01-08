@@ -1,33 +1,23 @@
-filename = ARGV.first
-
+from_file, to_file = ARGV
 script = $0
 
-puts "We're goign to erase #{filename}."
-puts "if you don't want that, hit CRTL-C."
-puts "If you do want that, hit RETURN."
+puts "Copying from #{from_file} to #{to_file}"
 
-print "? "
+#we could do these two on one line too, how?
+input = File.open(from_file)
+indata = input.read()
+
+puts "The input file is #{indata.length} bytes long"
+
+puts "Does the output file exist? #{File.exists? to_file}"
+puts "Ready, hit RETURN to continue, CRTL-C to abort."
+
 STDIN.gets
 
-puts "Opening the file..."
-target = File.open(filename, "w")
+output = File.open(to_file, 'w')
+output.write(indata)
 
-puts "Truncating the file. Goodbye!"
-target.truncate(target.size)
+puts "Alright, all done"
 
-puts "Now I'm going to ask you for three lines."
-
-print "line1: "; line1 = STDIN.gets.chomp()
-print "line 2: "; line2 = STDIN.gets.chomp()
-
-puts "I'm going to write these to the file."
-
-target.write(line1)
-target.write("\n")
-target.write(line2)
-target.write("\n")
-target.write("line3")
-target.write("\n")
-
-puts "And finally, we close it"
-target.close()
+output.close()
+input.close()
