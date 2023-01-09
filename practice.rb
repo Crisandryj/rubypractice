@@ -8,3 +8,7 @@ end
 def puts_two_again(arg1, arg2)
   puts "arg1: #{arg1}, arg2: #{arg2}"
 end
+#this just takes one argument
+def puts_one(arg1)
+  puts "arg1: #{arg1}"
+end
