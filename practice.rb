@@ -17,3 +17,8 @@ end
 def puts_none()
   puts "I got nothin"
 end
+
+puts_two("Zed","Shaw")
+puts_two_again("Zed","Shaw")
+puts_one("First!")
+puts_none()
