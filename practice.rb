@@ -12,3 +12,8 @@ end
 def puts_one(arg1)
   puts "arg1: #{arg1}"
 end
+
+#this one takes no arguments
+def puts_none()
+  puts "I got nothin"
+end
