@@ -1,24 +1,21 @@
-#this one is like your scripts with argv
-def puts_two(*args)
-    arg1,arg2 = args
-  puts "args1: #{arg1}, arg2: #{arg2}"
+def cheese_and_crackers(cheese_count, boxes_of_crackers)
+  puts "You have #{cheese_count} cheeses!"
+  puts "you have #{boexes_of_crackers} boxes of cracker"
+  puts "Man that's enough for a party!"
+  puts "Get a blanket"
+  puts #blank line
 end
 
-#ok, that *args is actually pointless, we can just do this
-def puts_two_again(arg1, arg2)
-  puts "arg1: #{arg1}, arg2: #{arg2}"
-end
-#this just takes one argument
-def puts_one(arg1)
-  puts "arg1: #{arg1}"
-end
+puts "We can just give the function numbers directly:"
+cheese_and_crackers(20,30)
 
-#this one takes no arguments
-def puts_none()
-  puts "I got nothin"
-end
+puts "OR, we can use variables from our script:"
+amount_of_cheese = 10
+amount_of_crackers = 50
+cheese_and_crackers(amount_of_cheese, amount_of_crackers)
 
-puts_two("Zed","Shaw")
-puts_two_again("Zed","Shaw")
-puts_one("First!")
-puts_none()
+puts "We can even do math inside too:"
+cheese_and_crackers(10+20, 5+6)
+
+puts "And we can combine the two, variables and math:"
+cheese_and_crackers(amount_of_cheese + 100, amount_of_crackers + 1000)
