@@ -1,5 +1,5 @@
 #practice
-array = [3,5,3,4,5,6,7,8]
+array = [8, 3, 5, 7, 11]
 
 count = 0
 
@@ -13,4 +13,20 @@ array.each do |n|
  p num
 end
 
-count(array)
+
+
+def prime(arry)
+  collection = []
+  arry.each do |number|
+    (1..number).to_a.each do |num|
+      if number % num != 0
+        
+      else
+        collection.push(number)
+      end
+    end
+  end
+    p collection
+end
+
+prime(array)
