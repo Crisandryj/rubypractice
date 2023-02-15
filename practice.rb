@@ -14,15 +14,18 @@ array.each do |n|
 end
 
 
+# if any number other than 1 and itself leaves a remainder of 0
 
 def prime(arry)
   collection = []
   sum = 0
   arry.each do |number|
     (1..number).to_a.each do |num|
-      sum += (number % num)
+      if num != 1 || num != number
+        sum += (number % num)
+      end
     end
-    collection.push(number) if sum != 0
+  collection.push(number) if sum != 0
     p sum
     sum = 0
   end
