@@ -17,16 +17,16 @@ end
 
 def prime(arry)
   collection = []
+  sum = 0
   arry.each do |number|
     (1..number).to_a.each do |num|
-      if number % num != 0
-        
-      else
-        collection.push(number)
-      end
+      sum += (number % num)
     end
+    collection.push(number) if sum != 0
+    p sum
+    sum = 0
   end
-    p collection
+  p collection
 end
 
 prime(array)
