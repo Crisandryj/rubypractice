@@ -18,7 +18,6 @@ end
 
 def prime(arry)
   collection = []
-  sum = 0
   arry.each do |number|
     (2..number-1).to_a.each do |num|
         if number % num == 0
@@ -27,7 +26,10 @@ def prime(arry)
         end
     end
   end
-  p collection
+  collection.each do |n|
+    arry.delete(n)
+  end
+  p arry
 end
 
 prime(array)
