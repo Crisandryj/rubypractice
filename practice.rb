@@ -1,5 +1,5 @@
 #practice
-array = [8, 3, 5, 7, 11]
+array = [8, 3, 5, 7, 11,9]
 
 count = 0
 
@@ -20,14 +20,12 @@ def prime(arry)
   collection = []
   sum = 0
   arry.each do |number|
-    (1..number).to_a.each do |num|
-      if num != 1 || num != number
-        sum += (number % num)
-      end
+    (2..number-1).to_a.each do |num|
+        if number % num == 0
+        collection.push(number)
+        break
+        end
     end
-  collection.push(number) if sum != 0
-    p sum
-    sum = 0
   end
   p collection
 end
