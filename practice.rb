@@ -33,13 +33,9 @@ def prime(arry)
 end
 
 
-def factorial(number)
- if number > 0
-    number * factorial(number -1)
- end
+def factorial(n)
+  if (0..1).include?(n)
+   return 1
+  end
+     n * factorial(n - 1)
 end
-
-
-
-
-factorial(6)
