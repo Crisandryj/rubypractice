@@ -32,4 +32,14 @@ def prime(arry)
   p arry
 end
 
-prime(array)
+
+def factorial(number)
+ if number > 0
+    number * factorial(number -1)
+ end
+end
+
+
+
+
+factorial(6)
