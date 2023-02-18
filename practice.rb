@@ -62,7 +62,7 @@ def repeatNumber(num)
 end
 
 
-array = [2, 1, 5, 4, 6, 9, 7, 8, 10]
+array = [2, 1, 5, 4, 6, 9, 7, 10]
 
 def findMissingNumber(array)
   max = array.max
@@ -70,11 +70,10 @@ def findMissingNumber(array)
   missing = []
   arry.each do |n|
       unless array.include?(n)
-        return n
+        p n
       end
     end
-    return array
 end
 
 
-p findMissingNumber(array)
+findMissingNumber(array)
