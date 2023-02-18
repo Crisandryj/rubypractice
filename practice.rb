@@ -34,8 +34,32 @@ end
 
 
 def factorial(n)
-  if (0..1).include?(n)
-   return 1
+  if n <= 1
+return 1
   end
      n * factorial(n - 1)
 end
+
+#take first number and compare it all numbers ahead of it
+#take the second number compare it to all numbers ahead of it
+def repeatNumber(num)
+  array = num.to_s.split('')
+  count = array.count
+  repeats = 0
+  finish = count - 1
+  collection = []
+  array.each do |n|
+    current = n
+    index = array.find_index(n)
+    start = index + 1
+    array[start..finish].each do |num|
+      if current != num
+        return 'not repeat number'
+      end
+    end
+  end
+  return 'repeat number'
+end
+
+
+p repeatNumber(5555)
