@@ -75,5 +75,4 @@ def findMissingNumber(array)
     end
 end
 
-
 findMissingNumber(array)
