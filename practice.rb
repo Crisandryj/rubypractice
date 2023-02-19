@@ -76,7 +76,5 @@ def findMissingNumber(array)
 end
 
 
-
-
 nums = Array(0..255).join(',').split(',')
 p nums
