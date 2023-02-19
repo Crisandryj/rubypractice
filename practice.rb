@@ -104,6 +104,9 @@ end
 
 
 
+
+
+
 def solution(roman)
 #create hash with roman numerals
 romanHash = {
@@ -116,9 +119,19 @@ romanHash = {
 'M'  => 1000}
 
 #add each letter if the number ahead is greater
-p roman.split()
-#subract greater number - lesser number and add this to total
-
-end
+array = roman.split('')
+  start = 0
+  last = array.count - 1
+  sum = 0
+  array[1..last].each do |n|
+    current = array[start]
+  #subract greater number - lesser number and add this to total
+    if current > n
+      sum += current + n
+      else
+      sum += (n - current)
+    end
+    start += 1
+  end 
 
 solution('XXI')
