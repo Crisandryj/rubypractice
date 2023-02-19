@@ -76,5 +76,28 @@ def findMissingNumber(array)
 end
 
 
-nums = Array(0..255).join(',').split(',')
-p nums
+
+def is_valid_ip(ip)
+  nums = Array(0..255).join(',').split(',')
+  array = []
+  arry = ip.split('')
+  dotCount = arry.count('.')
+
+    if dotCount == 3
+       array = ip.split('.')
+       if array.count == 4
+       array.each do |n|
+      unless nums.include?(n)
+        return false
+      end
+    end
+  else
+   return false
+end
+
+    else
+      return false
+    end
+
+  return true
+end
