@@ -101,3 +101,24 @@ end
 
   return true
 end
+
+
+
+def solution(roman)
+#create hash with roman numerals
+romanHash = {
+'I' => 1,
+'V' => 5,
+'X' => 10,
+'L' => 50,
+'C' => 100,
+'D' => 500,
+'M'  => 1000}
+
+#add each letter if the number ahead is greater
+p roman.split()
+#subract greater number - lesser number and add this to total
+
+end
+
+solution('XXI')
