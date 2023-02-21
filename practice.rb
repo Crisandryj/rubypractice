@@ -102,11 +102,6 @@ end
   return true
 end
 
-
-
-
-
-
 def solution(roman)
 #create hash with roman numerals
 romanHash = {
@@ -132,6 +127,6 @@ array = roman.split('')
       sum += (n - current)
     end
     start += 1
-  end 
+  end
 
 solution('XXI')
