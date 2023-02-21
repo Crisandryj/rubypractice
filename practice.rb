@@ -105,6 +105,8 @@ end
 
 def solution(roman)
 #create hash with roman numerals
+def solution(roman)
+#create hash with roman numerals
 romanHash = {
 'I' => 1,
 'V' => 5,
@@ -120,17 +122,20 @@ numArray = array.map {|letter| romanHash[letter]}
   start = 0
   sum = 0
   n = 1
-  while n < numArray.count+3
+  lngth = numArray.count + 1
+  while n < lngth
      current = numArray[start]
   #add each letter if the number ahead is greater
-
-    if current >= (numArray[n] == nil ? 0 : numArray[n])
-      sum += (current + (numArray[n] == nil ? 0 : numArray[n]))
+    if n > numArray.count
+      sum += current
+      return sum
+    elsif current >= numArray[n]
+      sum += (current + numArray[n])
       start += 2
       n += 2
       else
       #subract greater number - lesser number and add this to total
-      sum += ((numArray[n] == nil ? 0 : numArray[n]) - current)
+      sum += (numArray[n] - current)
       start += 2
        n += 2
     end
@@ -139,5 +144,6 @@ numArray = array.map {|letter| romanHash[letter]}
 
    return sum
 end
+
 
 solution('XXI')
