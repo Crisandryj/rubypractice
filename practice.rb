@@ -102,11 +102,8 @@ end
   return true
 end
 
-
-
-def solution(roman)
 #create hash with roman numerals
-romanHash = {
+ROMAN = {
 'I' => 1,
 'V' => 5,
 'X' => 10,
@@ -115,8 +112,11 @@ romanHash = {
 'D' => 500,
 'M'  => 1000}
 
+#convert roman number to a regular number
+def solution(roman)
+
 array = roman.split('')
-numArray = array.map {|letter| romanHash[letter]}
+numArray = array.map {|letter| ROMAN[letter]}
 
   start = 0
   sum = 0
