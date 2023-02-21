@@ -115,11 +115,12 @@ romanHash = {
 
 #add each letter if the number ahead is greater
 array = roman.split('')
+numArray = array.map {|letter| romanHash[letter]}
   start = 0
-  last = array.count - 1
+  last = numArray.count - 1
   sum = 0
-  array[1..last].each do |n|
-    current = array[start]
+  numArray[1..last].each do |n|
+    current = numArray[start]
   #subract greater number - lesser number and add this to total
     if current > n
       sum += current + n
@@ -127,6 +128,5 @@ array = roman.split('')
       sum += (n - current)
     end
     start += 1
-  end
-
+  end 
 solution('XXI')
