@@ -102,6 +102,7 @@ end
   return true
 end
 
+
 def solution(roman)
 #create hash with roman numerals
 romanHash = {
@@ -113,20 +114,30 @@ romanHash = {
 'D' => 500,
 'M'  => 1000}
 
-#add each letter if the number ahead is greater
 array = roman.split('')
 numArray = array.map {|letter| romanHash[letter]}
+
   start = 0
-  last = numArray.count - 1
   sum = 0
-  numArray[1..last].each do |n|
-    current = numArray[start]
-  #subract greater number - lesser number and add this to total
-    if current > n
-      sum += current + n
+  n = 1
+  while n < numArray.count+3
+     current = numArray[start]
+  #add each letter if the number ahead is greater
+
+    if current >= (numArray[n] == nil ? 0 : numArray[n])
+      sum += (current + (numArray[n] == nil ? 0 : numArray[n]))
+      start += 2
+      n += 2
       else
-      sum += (n - current)
+      #subract greater number - lesser number and add this to total
+      sum += ((numArray[n] == nil ? 0 : numArray[n]) - current)
+      start += 2
+       n += 2
     end
-    start += 1
-  end 
+
+  end
+
+   return sum
+end
+
 solution('XXI')
