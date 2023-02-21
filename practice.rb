@@ -103,8 +103,7 @@ end
 end
 
 
-def solution(roman)
-#create hash with roman numerals
+
 def solution(roman)
 #create hash with roman numerals
 romanHash = {
@@ -126,7 +125,7 @@ numArray = array.map {|letter| romanHash[letter]}
   while n < lngth
      current = numArray[start]
   #add each letter if the number ahead is greater
-    if n > numArray.count
+    if n >= numArray.count
       sum += current
       return sum
     elsif current >= numArray[n]
@@ -141,9 +140,8 @@ numArray = array.map {|letter| romanHash[letter]}
     end
 
   end
-
    return sum
 end
 
 
-solution('XXI')
+p solution('XXI')
