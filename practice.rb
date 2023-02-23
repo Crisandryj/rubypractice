@@ -154,7 +154,7 @@ def isPrime(num)
   end
 end
 
-#check if s1 has the letters of s2
+#check if s1 has the letters of s2g
 def scramble(s1,s2)
   string2 = s2.split('')
   string1 = s1.split('')
