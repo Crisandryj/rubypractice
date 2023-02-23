@@ -142,16 +142,25 @@ numArray = array.map {|letter| ROMAN[letter]}
 end
 
 def isPrime(num)
-  if num < 0
+  if num <= 1
     return false
     else
     arry = Array(2..num -1)
-   if arry.any? {|n| num % n == 0}
-     return false
-     else
-     return true
-   end
- end
+      if arry.any? {|n| num % n == 0}
+        return false
+      else
+        return true
+      end
+  end
 end
 
-p isPrime(6)
+#check if s1 has the letters of s2
+def scramble(s1,s2)
+  string2 = s2.split('')
+  string1 = s1.split('')
+  if string2.all?{|n| string1.include?(n) }
+    return true
+    else
+    false
+    end
+end
