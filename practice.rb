@@ -117,7 +117,6 @@ def solution(roman)
 
 array = roman.split('')
 numArray = array.map {|letter| ROMAN[letter]}
-
   start = 0
   sum = 0
   n = 1
@@ -138,10 +137,21 @@ numArray = array.map {|letter| ROMAN[letter]}
       start += 2
        n += 2
     end
-
   end
    return sum
 end
 
+def isPrime(num)
+  if num < 0
+    return false
+    else
+    arry = Array(2..num -1)
+   if arry.any? {|n| num % n == 0}
+     return false
+     else
+     return true
+   end
+ end
+end
 
-p solution('XXI')
+p isPrime(6)
