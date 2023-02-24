@@ -162,5 +162,11 @@ def scramble(s1,s2)
     return true
     else
     false
-    end
+  end
 end
+
+
+array1 = [1,2,3,4]
+array2 = [1,2,3]
+
+p array1 - array2
