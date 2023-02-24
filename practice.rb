@@ -165,8 +165,17 @@ def scramble(s1,s2)
   end
 end
 
+scramble('acef', 'facce')
 
 array1 = [1,2,3,4]
 array2 = [1,2,3]
+str = 'gomojo'
 
-p array1 - array2
+#scan(/\w+/) — create an array of all sequences of 'word' characters
+#max_by{ … } — find the word that gives the largest value inside this block
+#chars — split the string into characters
+#group_by(&:to_s) — create a hash mapping each character to an array of all the occurrences
+#values — just get all the arrays of the occurrences
+#map(&:size) — convert each array to the number of characters in that array
+#max — find the largest characters and use this as the result for max_by to examine
+str.scan(/\w+/).max_by{ |w| w.chars.group_by(&:to_s).values.map(&:size).max }
