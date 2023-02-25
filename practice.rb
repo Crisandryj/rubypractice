@@ -156,20 +156,20 @@ end
 
 #check if s1 has the letters of s2g
 def scramble(s1,s2)
-  string2 = s2.split('')
-  string1 = s1.split('')
    hash1 = s1.chars.group_by {|l| l}.transform_values {|values| values.count}
    hash2 = s2.chars.group_by {|l| l}.transform_values {|values| values.count}
-  if string2.all?{|n| string1.include?(n)}
-    if string2.all?{|l| hash1[l] >= hash2[l]}
+  if s2.chars.all?{|n| s1.include?(n)}
+    if s2.chars.all?{|l| hash1[l] >= hash2[l]}
      return true
+   else
+     return false
     end
     else
-    false
+    return false
   end
 end
 
-scramble('acef', 'facce')
+p scramble('acef', 'facce')
 
 array1 = [1,2,3,4]
 array2 = [1,2,3]
