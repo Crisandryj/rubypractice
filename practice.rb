@@ -179,3 +179,8 @@ str = 'gomojo'
 #map(&:size) — convert each array to the number of characters in that array
 #max — find the largest characters and use this as the result for max_by to examine
 str.scan(/\w+/).max_by{ |w| w.chars.group_by(&:to_s).values.map(&:size).max }
+
+
+
+
+p str.chars.group_by {|l| l}.transform_values {|values| values.count}
