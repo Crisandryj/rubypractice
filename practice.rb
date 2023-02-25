@@ -175,7 +175,7 @@ array1 = [1,2,3,4]
 array2 = [1,2,3]
 s1 = 'gomojo'
 s2 = 'afkjagdgao'
-
+p 'array'.capitalize
 #scan(/\w+/) — create an array of all sequences of 'word' characters
 #max_by{ … } — find the word that gives the largest value inside this block
 #chars — split the string into characters
@@ -185,4 +185,10 @@ s2 = 'afkjagdgao'
 #max — find the largest characters and use this as the result for max_by to examine
 s1.scan(/\w+/).max_by{ |w| w.chars.group_by(&:to_s).values.map(&:size).max }
 
-s1.chars.group_by {|l| l}.transform_values {|values| values.count}
+def generateHashtag(str)
+ if str.gsub(/\s+/, "").chars.count <= 0 || str.gsub(/\s+/, "").chars.count >= 140
+   return false
+   else
+   p ('#' + str.split.map(&:capitalize).join)
+  end
+end
