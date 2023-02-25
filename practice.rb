@@ -158,8 +158,12 @@ end
 def scramble(s1,s2)
   string2 = s2.split('')
   string1 = s1.split('')
-  if string2.all?{|n| string1.include?(n) }
-    return true
+   hash1 = s1.chars.group_by {|l| l}.transform_values {|values| values.count}
+   hash2 = s2.chars.group_by {|l| l}.transform_values {|values| values.count}
+  if string2.all?{|n| string1.include?(n)}
+    if string2.all?{|l| hash1[l] >= hash2[l]}
+     return true
+    end
     else
     false
   end
@@ -169,7 +173,8 @@ scramble('acef', 'facce')
 
 array1 = [1,2,3,4]
 array2 = [1,2,3]
-str = 'gomojo'
+s1 = 'gomojo'
+s2 = 'afkjagdgao'
 
 #scan(/\w+/) — create an array of all sequences of 'word' characters
 #max_by{ … } — find the word that gives the largest value inside this block
@@ -178,9 +183,6 @@ str = 'gomojo'
 #values — just get all the arrays of the occurrences
 #map(&:size) — convert each array to the number of characters in that array
 #max — find the largest characters and use this as the result for max_by to examine
-str.scan(/\w+/).max_by{ |w| w.chars.group_by(&:to_s).values.map(&:size).max }
+s1.scan(/\w+/).max_by{ |w| w.chars.group_by(&:to_s).values.map(&:size).max }
 
-
-
-
-p str.chars.group_by {|l| l}.transform_values {|values| values.count}
+s1.chars.group_by {|l| l}.transform_values {|values| values.count}
