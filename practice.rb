@@ -192,3 +192,8 @@ def generateHashtag(str)
    p ('#' + str.split.map(&:capitalize).join)
   end
 end
+
+def digital_root(n)
+  return n if n < 10
+  digital_root(n.to_s.chars.map(&:to_i).reduce(&:+))
+end
