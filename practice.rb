@@ -153,7 +153,6 @@ def isPrime(num)
       end
   end
 end
-
 #check if s1 has the letters of s2g
 def scramble(s1,s2)
    hash1 = s1.chars.group_by {|l| l}.transform_values {|values| values.count}
