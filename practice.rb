@@ -196,3 +196,18 @@ def digital_root(n)
   return n if n < 10
   digital_root(n.to_s.chars.map(&:to_i).reduce(&:+))
 end
+
+def get_pins(observed)
+  hash = { '1' => ['1','2','4'], '2' =>['1','2','3','5'], '3' => ['2','3','6'],
+           '4' => ['1','4','5','7'], '6' =>['2','4','5','6','8'], '7' =>['4','7','8'], '8' =>['0','5','7','8','9'] ,
+           '9' => ['6','8','9'], '0' => ['0','8']  }
+
+  code = observed.split('')
+  combinations = []
+
+  code.each do |n|
+     hash[n]
+  end
+
+
+end
