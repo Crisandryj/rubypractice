@@ -213,10 +213,15 @@ end
 class User
   def initialize
     @rank = -8
+    @progress = 0
   end
 
   def rank
     @rank
+  end
+
+  def progress
+    @progress
   end
 
   def add(a,b)
@@ -225,10 +230,18 @@ class User
 
   private
 
-  def progress
-  end
 
   def inc_progress(rank)
+    if @rank == rank
+      @progress += 3
+    elsif rank == @rank -1
+      @progress += 1
+    elsif rank <= @rank - 2
+        @progress
+    else rank > @rank
+      d = rank - @rank
+      @progress += (10 * d * d)
+     end
   end
 
 end
