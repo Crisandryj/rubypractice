@@ -208,6 +208,27 @@ def get_pins(observed)
   code.each do |n|
      hash[n]
   end
+end
+#codewats ranking system
+class User
+  def initialize
+    @rank = -8
+  end
 
+  def rank
+    @rank
+  end
+
+  def add(a,b)
+    return a + b
+  end
+
+  private
+
+  def progress
+  end
+
+  def inc_progress(rank)
+  end
 
 end
