@@ -243,5 +243,4 @@ class User
       @progress += (10 * d * d)
      end
   end
-
 end
