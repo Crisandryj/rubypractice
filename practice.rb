@@ -188,7 +188,7 @@ def generateHashtag(str)
  if str.gsub(/\s+/, "").chars.count <= 0 || str.gsub(/\s+/, "").chars.count >= 140
    return false
    else
-   p ('#' + str.split.map(&:capitalize).join)
+   ('#' + str.split.map(&:capitalize).join)
   end
 end
 
@@ -228,19 +228,34 @@ class User
     return a + b
   end
 
-  private
-
-
-  def inc_progress(rank)
+   def inc_progress(rank)
     if @rank == rank
       @progress += 3
+      self.inc_rank
     elsif rank == @rank -1
       @progress += 1
+      self.inc_rank
     elsif rank <= @rank - 2
         @progress
+      self.inc_rank
     else rank > @rank
-      d = rank - @rank
+      if rank < 0 && @rank < 0
+         d = rank.abs - @rank.abs
       @progress += (10 * d * d)
+        self.inc_rank
+        end
      end
+    end
+
+  def inc_rank
+    @rank += 1 if @progress >= 100
+    @progress -= 100 if @progress >= 100
   end
+
 end
+
+user = User.new
+
+user.inc_progress(5)
+
+p user.progress
