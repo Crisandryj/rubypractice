@@ -251,7 +251,6 @@ class User
     @rank += 1 if @progress >= 100
     @progress -= 100 if @progress >= 100
   end
-
 end
 
 user = User.new
