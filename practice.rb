@@ -256,5 +256,3 @@ end
 user = User.new
 
 user.inc_progress(5)
-
-p user.progress
