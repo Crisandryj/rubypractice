@@ -256,3 +256,10 @@ end
 user = User.new
 
 user.inc_progress(5)
+
+
+def next_bigger(n)
+  #go from right to left and swap one pair of numbers at a time
+  #return num if new num > orginal else swap next pair
+  #if all new numbers < org return -1
+end
