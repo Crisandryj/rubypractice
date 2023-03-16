@@ -259,7 +259,12 @@ user.inc_progress(5)
 
 
 def next_bigger(n)
+  array = n.split
   #go from right to left and swap one pair of numbers at a time
+  current = array[-1]
+  current_array = array[0..array.count-1]
+  array.reverse.each
+
   #return num if new num > orginal else swap next pair
   #if all new numbers < org return -1
 end
