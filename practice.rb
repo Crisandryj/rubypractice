@@ -269,6 +269,4 @@ def next_bigger(n)
   #return num if new num > orginal else swap next pair
   #if all new numbers < org return -1
 end
-
-
 next_bigger(123)
