@@ -255,7 +255,7 @@ end
 
 user = User.new
 
-user.inc_progress(5)
+
 
 def next_bigger(n)
   array = n.split
