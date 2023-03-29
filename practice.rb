@@ -269,6 +269,8 @@ def next_bigger(n)
 end
 
 
+# TODO: complete this class
+
 class PaginationHelper
 
   # The constructor takes in an array of items and a integer indicating how many
@@ -278,6 +280,16 @@ class PaginationHelper
    @items_per_page = items_per_page
   end
 
+   def create_pages(array)
+    hash = Hash.new
+    n = 0
+    until array.count < 1
+       hash[n] = array.shift(4)
+       n+=1
+     end
+        return hash
+   end
+
   # returns the number of items within the entire collection
   def item_count
     @collection.count
@@ -285,45 +297,25 @@ class PaginationHelper
 
   # returns the number of pages
   def page_count
-    (@collection/self.item_count).to_f.ceil
+     (@collection.count/@items_per_page.to_f).ceil
   end
 
   # returns the number of items on the current page. page_index is zero based.
   # this method should return -1 for page_index values that are out of range
   def page_item_count(page_index)
-
+     pages = create_pages(@collection)
+     return pages[page_index].count
   end
 
   # determines what page an item is on. Zero based indexes.
   # this method should return -1 for item_index values that are out of range
   def page_index(item_index)
-
-  end
-end
-
-
-
-def create_pages(array)
-  hash = Hash.new
-  n = 0
-  until array.count < 1
-     hash[n] = array.shift(4)
-     n+=1
-   end
-      return hash
-end
-
-arry = [1,2,3,4,5,6]
-
-
-def page_item_count(page_index,array)
-   pages = create_pages(array)
-   return pages[page_index].count
- end
-
- def page_count(array)
-   p array.count
-     (array.length/4.to_f).ceil
+    pages = create_pages(@collection)
+    pages.key(item_index)
   end
 
-  p page_count(arry)
+end
+
+helper = PaginationHelper.new([1,2,3,4,5,6],4)
+
+p helper.page_count
