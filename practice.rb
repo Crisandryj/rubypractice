@@ -303,14 +303,14 @@ end
 
 arry = [1,2,3,4,5,6,7]
 
-def create_pages(arry)
-  until @collection.nil?
-     n = 0
-     array[n] = @collection.shift(4)
+def create_pages(array)
+  hash = Hash.new
+  n = 0
+  until array.count < 1
+     hash[n] = array.shift(4)
      n+=1
-     return array
    end
-
+      return hash
 end
 
 
