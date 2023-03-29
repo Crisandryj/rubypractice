@@ -301,7 +301,7 @@ class PaginationHelper
   end
 end
 
-arry = [1,2,3,4,5,6,7]
+
 
 def create_pages(array)
   hash = Hash.new
@@ -313,5 +313,17 @@ def create_pages(array)
       return hash
 end
 
+arry = [1,2,3,4,5,6]
 
-p create_pages(arry)
+
+def page_item_count(page_index,array)
+   pages = create_pages(array)
+   return pages[page_index].count
+ end
+
+ def page_count(array)
+   p array.count
+     (array.length/4.to_f).ceil
+  end
+
+  p page_count(arry)
