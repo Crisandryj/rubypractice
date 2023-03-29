@@ -168,13 +168,12 @@ def scramble(s1,s2)
   end
 end
 
-p scramble('acef', 'facce')
 
 array1 = [1,2,3,4]
 array2 = [1,2,3]
 s1 = 'gomojo'
 s2 = 'afkjagdgao'
-p 'array'.capitalize
+
 #scan(/\w+/) — create an array of all sequences of 'word' characters
 #max_by{ … } — find the word that gives the largest value inside this block
 #chars — split the string into characters
@@ -268,7 +267,6 @@ def next_bigger(n)
   #return num if new num > orginal else swap next pair
   #if all new numbers < org return -1
 end
-next_bigger(123)
 
 
 class PaginationHelper
@@ -287,7 +285,7 @@ class PaginationHelper
 
   # returns the number of pages
   def page_count
-    @collection/self.item_count
+    (@collection/self.item_count).to_f.ceil
   end
 
   # returns the number of items on the current page. page_index is zero based.
@@ -302,3 +300,18 @@ class PaginationHelper
 
   end
 end
+
+arry = [1,2,3,4,5,6,7]
+
+def create_pages(arry)
+  until @collection.nil?
+     n = 0
+     array[n] = @collection.shift(4)
+     n+=1
+     return array
+   end
+
+end
+
+
+p create_pages(arry)
