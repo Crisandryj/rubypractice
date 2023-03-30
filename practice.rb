@@ -303,8 +303,12 @@ class PaginationHelper
   # returns the number of items on the current page. page_index is zero based.
   # this method should return -1 for page_index values that are out of range
   def page_item_count(page_index)
-     pages = create_pages(@collection)
-     return pages[page_index].count
+    if page_index > (self.page_count-1) || page_index < 0
+      return -1
+      else
+       pages = create_pages(@collection)
+       return pages[page_index].count
+     end
   end
 
   # determines what page an item is on. Zero based indexes.
@@ -318,4 +322,7 @@ end
 
 helper = PaginationHelper.new([1,2,3,4,5,6],4)
 
-p helper.page_count
+
+def score( dice )
+  dice.group_by { |n| n.itself}
+end
