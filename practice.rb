@@ -330,12 +330,18 @@ array = [1,1,1,1,5,1]
 
 
 
+# def two_sum(nums, target)
+#     nums.each_with_index do |element, index|
+#         nums[index+1..-1].each_with_index do |n, i|
+#         return [index,i+1] if element + n == target
+#         end
+#     end
+# end
+
 def two_sum(nums, target)
-    nums.each_with_index do |element, index |
-        nums[1..-1].each_with_index do |n, i|
-        return [index,i +1] if element + n == target
-        end
+    nums.each_with_index do |element, index|
+      return [index,index +1] if element + nums[index+1] == target
     end
 end
 
-p two_sum([5,4,3], 9)
+p two_sum([2,5,5,11],10)
