@@ -324,5 +324,16 @@ helper = PaginationHelper.new([1,2,3,4,5,6],4)
 
 
 def score( dice )
-  dice.group_by { |n| n.itself}
+  hash = dice.group_by { |n| dice.count(n)}
+end
+array = [1,1,1,1,5,1]
+
+p score(array)
+
+def two_sum(nums, target)
+    nums.each_with_index do | element, index |
+        nums.each_with_index do |n, i|
+        return [index,i] if element + n = target
+        end
+    end
 end
