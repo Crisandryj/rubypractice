@@ -328,12 +328,14 @@ def score( dice )
 end
 array = [1,1,1,1,5,1]
 
-p score(array)
+
 
 def two_sum(nums, target)
-    nums.each_with_index do | element, index |
-        nums.each_with_index do |n, i|
-        return [index,i] if element + n = target
+    nums.each_with_index do |element, index |
+        nums[1..-1].each_with_index do |n, i|
+        return [index,i +1] if element + n == target
         end
     end
 end
+
+p two_sum([5,4,3], 9)
