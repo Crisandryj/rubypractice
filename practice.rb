@@ -344,4 +344,4 @@ def two_sum(nums, target)
     end
 end
 
-p two_sum([2,5,5,11],10)
+p two_sum([3,2,3],10)
