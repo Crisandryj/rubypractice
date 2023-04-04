@@ -331,21 +331,20 @@ array = [1,1,1,4,5,1]
 
 
 def two_sum(nums, target)
-  sorted = nums.sort
-  l = 0
-  r = -1
-  sum = 0
-  while sum != target
-  sum = sorted[l] + sorted[r]
-    if sum > target
-    r -= 1
-    elsif sum < target
-    l += 1
-    else
-    return [nums.find_index(sorted[l]),nums.find_index(sorted[r])] if sorted[l] + sorted[r] == target
-    end
-  end
-
+    sorted = nums.sort
+    l = 0
+    r = -1
+    sum = -10
+    while sum != target
+    sum = sorted[l] + sorted[r]
+        if sum > target
+        r -= 1
+        elsif sum < target
+        l += 1
+        else
+        return [nums.find_index(sorted[l]),nums.rindex(sorted[r])] if sorted[l] + sorted[r] == target
+        end
+    end 
 end
 
 p array[-3]
