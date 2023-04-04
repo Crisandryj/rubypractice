@@ -326,22 +326,26 @@ helper = PaginationHelper.new([1,2,3,4,5,6],4)
 def score( dice )
   hash = dice.group_by { |n| dice.count(n)}
 end
-array = [1,1,1,1,5,1]
+array = [1,1,1,4,5,1]
 
 
-
-# def two_sum(nums, target)
-#     nums.each_with_index do |element, index|
-#         nums[index+1..-1].each_with_index do |n, i|
-#         return [index,i+1] if element + n == target
-#         end
-#     end
-# end
 
 def two_sum(nums, target)
-    nums.each_with_index do |element, index|
-      return [index,index +1] if element + nums[index+1] == target
+  sorted = nums.sort
+  l = 0
+  r = -1
+  sum = 0
+  while sum != target
+  sum = sorted[l] + sorted[r]
+    if sum > target
+    r -= 1
+    elsif sum < target
+    l += 1
+    else
+    return [nums.find_index(sorted[l]),nums.find_index(sorted[r])] if sorted[l] + sorted[r] == target
     end
+  end
+
 end
 
-p two_sum([3,2,3],10)
+p array[-3]
