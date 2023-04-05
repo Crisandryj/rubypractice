@@ -344,7 +344,7 @@ def two_sum(nums, target)
         else
         return [nums.find_index(sorted[l]),nums.rindex(sorted[r])] if sorted[l] + sorted[r] == target
         end
-    end 
+    end
 end
 
 p array[-3]
