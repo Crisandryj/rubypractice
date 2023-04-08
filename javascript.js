@@ -5,8 +5,17 @@ const content = document.createElement('p');
 content.textContent = "Hey!, Im red"
 content.style.cssText = "color: red;"
 
-container.appendChild(content)
 
-const heading document.createElement('h3')
+const pink = document.createElement('div')
+pink.textContent = "hello"
+pink.setAttribute('style', 'border-style:solid; background: pink;')
 
-heading.style.cssText =  "color: blue;"
+
+
+const heading = document.createElement('h1')
+
+heading.textContent ="hi I'm a div"
+
+pink.appendChild(heading)
+
+container.appendChild(pink)
