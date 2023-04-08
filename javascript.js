@@ -1,6 +1,11 @@
 const btn = document.querySelector('#btn');
 btn.onclick = () => alert("Hello World");
 
+const btn = document.querySelector('#btn');
+btn.addEventListener('click', () => {
+  alert("Hello World");
+});
+
 const container = document.querySelector('#container');
 
 const content = document.createElement('p');
