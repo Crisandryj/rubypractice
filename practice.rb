@@ -328,8 +328,6 @@ def score( dice )
 end
 array = [1,1,1,4,5,1]
 
-
-
 def two_sum(nums, target)
     sorted = nums.sort
     l = 0
