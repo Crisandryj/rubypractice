@@ -322,7 +322,6 @@ end
 
 helper = PaginationHelper.new([1,2,3,4,5,6],4)
 
-
 def score( dice )
   hash = dice.group_by { |n| dice.count(n)}
 end
