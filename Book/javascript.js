@@ -12,11 +12,13 @@ function addBookToLibrary(book){
 
 const table = document.querySelector("table")
 
+let rows = []
+
 function listBooks(library){
   for (let i = 0; i < library.length; i++){
-    const `titleRow${i}` = document.createElement("row")
-    `row${i}`.textcontent = library[i].title
-    table.appendChild(`titleRow${i})`  }
+    rows[i] = document.createElement("row")
+    rows[i].textcontent = library[i].title
+    table.appendChild(rows[i])}
 }
 
 const bookOne = new Book("Go go","Cris", 175)
@@ -27,4 +29,4 @@ addBookToLibrary(bookOne)
 addBookToLibrary(bookTwo)
 addBookToLibrary(bookThree)
 
-listBooks(library)
+listBooks(myLibrary)
