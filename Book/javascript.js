@@ -13,16 +13,24 @@ function addBookToLibrary(book){
 const table = document.querySelector("tbody")
 
 let rows = []
-let data = []
+let title = []
+let author = []
+let pages = []
 
 function listBooks(library){
   for (let i = 0; i < library.length; i++){
     rows[i] = document.createElement("tr")
-    data[i] = document.createElement("td")
+    title[i] = document.createElement("td")
+    author[i] = document.createElement("td")
+    pages[i] = document.createElement("td")
     const row = table.appendChild(rows[i])
-    console.log(data[i])
-    row.appendChild(data[i])
-    data[i].textContent = myLibrary[i].title
+    console.log(title[i])
+    row.appendChild(title[i])
+    row.appendChild(author[i])
+    row.appendChild(pages[i])
+    title[i].textContent = myLibrary[i].title
+    author[i].textContent = myLibrary[i].author
+    pages[i].textContent = myLibrary[i].pages
   }
 }
 
