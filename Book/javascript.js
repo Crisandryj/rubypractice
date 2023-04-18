@@ -35,8 +35,8 @@ function listBooks(library){
 }
 
 const formContainer = document.querySelector('.formContainer')
-
 const form = document.createElement("form")
+formContainer.appendChild(form)
 
 
 const bookOne = new Book("Go go","Cris", 175)
