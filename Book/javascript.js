@@ -35,8 +35,12 @@ function listBooks(library){
 }
 
 const formContainer = document.querySelector('.formContainer')
-const form = document.createElement("form")
-formContainer.appendChild(form)
+const button = document.querySelector('.showbtn')
+
+button.addEventListener('click',() => {
+  formContainer.classList.toggle("hidden")
+})
+
 
 
 const bookOne = new Book("Go go","Cris", 175)
