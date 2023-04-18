@@ -34,6 +34,11 @@ function listBooks(library){
   }
 }
 
+const formContainer = document.querySelector('.formContainer')
+
+const form = document.createElement("form")
+
+
 const bookOne = new Book("Go go","Cris", 175)
 const bookTwo = new Book("Fun","Jon", 155)
 const bookThree = new Book("Home","Aryn", 125)
