@@ -41,6 +41,12 @@ button.addEventListener('click',() => {
   formContainer.classList.toggle("hidden")
 })
 
+const submit = document.querySelector('#login')
+
+submit.addEventListener('click',(e)=>{
+e.preventDefault();
+})
+
 const bookOne = new Book("Go go","Cris", 175)
 const bookTwo = new Book("Fun","Jon", 155)
 const bookThree = new Book("Home","Aryn", 125)
