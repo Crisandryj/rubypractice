@@ -41,18 +41,6 @@ button.addEventListener('click',() => {
   formContainer.classList.toggle("hidden")
 })
 
-const submit = document.querySelector('#submit')
-
-const form = document.querySelector('form')
-
-submit.addEventListener('click',(e) => {
-e.preventDefault()
-const title = form.elements['title']
-const author = form.elements['author']
-const pages = form.elements['pages']
-const newbook = new Book(title,author,pages)
-// console.log(form.elements['title'].value)
-})
 
 const bookOne = new Book("Go go","Cris", 175)
 const bookTwo = new Book("Fun","Jon", 155)
@@ -61,5 +49,24 @@ const bookThree = new Book("Home","Aryn", 125)
 addBookToLibrary(bookOne)
 addBookToLibrary(bookTwo)
 addBookToLibrary(bookThree)
+
+const submit = document.querySelector('#submit')
+
+const bookForm = document.querySelector('form')
+
+function myFunction() {
+  alert("hi");
+}
+
+
+submit.addEventListener('click',(e) => {
+e.preventDefault()
+let title = bookForm.elements['title'].value
+let author = bookForm.elements['author'].value
+let pages = bookForm.elements['pages'].value
+let newbook = new Book(title,author,pages)
+// console.log(form.elements['title'].value)
+})
+bookForm.addEventListener("submit",myFunction());
 
 listBooks(myLibrary)
