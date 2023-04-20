@@ -55,18 +55,20 @@ const submit = document.querySelector('#submit')
 const bookForm = document.querySelector('form')
 
 function myFunction() {
-  alert("hi");
+  addBookToLibrary(bookOne);
 }
 
+document.getElementById("newbook").addEventListener("submit", myFunction);
 
-submit.addEventListener('click',(e) => {
-e.preventDefault()
-let title = bookForm.elements['title'].value
-let author = bookForm.elements['author'].value
-let pages = bookForm.elements['pages'].value
-let newbook = new Book(title,author,pages)
-// console.log(form.elements['title'].value)
-})
-bookForm.addEventListener("submit",myFunction());
+function addToList() {
+  let title = bookForm.elements['title'].value
+  let author = bookForm.elements['author'].value
+  let pages = bookForm.elements['pages'].value
+  let newbook = new Book(title,author,pages)
+  addBookToLibrary(newbook)
+}
+
+submit.addEventListener('click',addToList());
+
 
 listBooks(myLibrary)
