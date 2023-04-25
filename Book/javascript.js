@@ -57,11 +57,15 @@ function addToList(bookForm) {
   let title = bookForm.elements['title'].value
   let author = bookForm.elements['author'].value
   let pages = bookForm.elements['pages'].value
-  let newBook = new Book(title,author,pages)
+  let newBook = new Book(
+                    title,
+                    author,
+                    pages)
   console.log(title)
   console.log(newBook)
   addBookToLibrary(newBook)
 }
+
 submit.addEventListener('click',addToList(newBooks));
 
 
