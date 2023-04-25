@@ -24,7 +24,6 @@ function listBooks(library){
     author[i] = document.createElement("td")
     pages[i] = document.createElement("td")
     const row = table.appendChild(rows[i])
-    console.log(title[i])
     row.appendChild(title[i])
     row.appendChild(author[i])
     row.appendChild(pages[i])
@@ -52,23 +51,18 @@ addBookToLibrary(bookThree)
 
 const submit = document.querySelector('#submit')
 
-const bookForm = document.querySelector('form')
+const newBooks = document.querySelector('form')
 
-function myFunction() {
-  addBookToLibrary(bookOne);
-}
-
-document.getElementById("newbook").addEventListener("submit", myFunction);
-
-function addToList() {
+function addToList(bookForm) {
   let title = bookForm.elements['title'].value
   let author = bookForm.elements['author'].value
   let pages = bookForm.elements['pages'].value
-  let newbook = new Book(title,author,pages)
-  addBookToLibrary(newbook)
+  let newBook = new Book(title,author,pages)
+  console.log(title)
+  console.log(newBook)
+  addBookToLibrary(newBook)
 }
-
-submit.addEventListener('click',addToList());
+submit.addEventListener('click',addToList(newBooks));
 
 
 listBooks(myLibrary)
