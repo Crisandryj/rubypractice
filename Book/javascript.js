@@ -53,18 +53,20 @@ const submit = document.querySelector('#submit')
 
 const newBooks = document.querySelector('form')
 
-function addToList(bookForm) {
+
+submit.addEventListener('submit',(e)=>{
+  let formValue = e.target.elements
   let newBook = new Book(
-                    bookForm.elements['title'].value,
-                    bookForm.elements['author'].value,
-                    bookForm.elements['pages'].value)
+                    formValue.elements['title'].value,
+                    formValue.elements['author'].value,
+                    formValue.elements['pages'].value
+                    )
   console.log(title)
+  
   console.log(newBook)
   addBookToLibrary(newBook)
-  bookForm.reset()
 }
-
-submit.addEventListener('click',addToList(newBooks));
+);
 
 
 listBooks(myLibrary)
