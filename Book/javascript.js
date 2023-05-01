@@ -19,6 +19,15 @@ addBookToLibrary(book1)
 addBookToLibrary(book2)
 addBookToLibrary(book3)
 
+let table = document.querySelector('table')
+
+function addRowsToTable(){
+  for (let i = 0; i < myLibrary.length; i++) {
+    let row = document.createElement('tr')
+    let data = document.createElement('td')
+    table.appendChild(row)
+  }
+}
 
 function displayBooks(){
   //loop thru each books title, author and pages
@@ -29,5 +38,5 @@ function displayBooks(){
   }
 }
 
-
+addRowsToTable()
 displayBooks()
