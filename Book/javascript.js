@@ -24,12 +24,19 @@ let table = document.querySelector('table')
 function addRowsToTable(){
   for (let i = 0; i < myLibrary.length; i++) {
     let row = document.createElement('tr')
-    let data = document.createElement('td')
+    let titleData = document.createElement('td')
+    let authorData = document.createElement('td')
+    let pagesData = document.createElement('td')
     table.appendChild(row)
+    row.appendChild(titleData)
+    row.appendChild(authorData)
+    row.appendChild(pagesData)
   }
 }
 
 function displayBooks(){
+  //for each book in library add row
+    addRowsToTable()
   //loop thru each books title, author and pages
   for (let i = 0; i < myLibrary.length; i++) {
     console.log(myLibrary[i]['title'])
@@ -38,5 +45,5 @@ function displayBooks(){
   }
 }
 
-addRowsToTable()
+
 displayBooks()
