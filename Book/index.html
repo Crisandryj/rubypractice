@@ -20,11 +20,13 @@
         <th>Author</th>
         <th>Number of Pages</th>
       </tr>
+        <p id='answer'></p>
     </table>
     <button class='showbtn'>Enter New Book</button>
     <div class="formContainer hidden">
       <h1>New Book</h1>
-      <form id="newbook">
+
+      <form id="newbook" action="" method="POST">
         <div class='field'>
           <label for="title">Title:</label>
           <input type="text" id="title" name="title" placeholder="Enter title of new book">
@@ -37,7 +39,7 @@
           <label for="pages">Pages:</label>
           <input type="text" id="pages" name="pages" placeholder="Enter number of pages">
         </div>
-        <input id='submit' type="submit" value="Submit">
+        <input id='submit' type="button" value="Submit">
       </form>
     </div>
   </div>
