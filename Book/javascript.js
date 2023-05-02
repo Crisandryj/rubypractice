@@ -34,4 +34,11 @@ function displayBooks(){
   }
 }
 
+let showBtn = document.querySelector('.showbtn')
+let container = document.querySelector('.formContainer')
+
+showBtn.addEventListener('click',()=>{
+  container.classList.toggle('hidden')
+})
+
 displayBooks()
