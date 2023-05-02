@@ -48,6 +48,12 @@ let newBookAuthor = document.querySelector('#author').value
 let newBookPages = document.querySelector('#pages').value
 
 let newBookForm = document.querySelector('#newbookform')
+let newBookSubmit = document.querySelector('#submit')
+
+newBookSubmit.addEventListener('click',(e)=>{
+  e.preventDefault
+  console.log(newBookTitle)
+})
 
 console.log(newBookForm)
 
