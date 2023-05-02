@@ -34,11 +34,22 @@ function displayBooks(){
   }
 }
 
+//selects new book button and form container
 let showBtn = document.querySelector('.showbtn')
 let container = document.querySelector('.formContainer')
 
+//unhides the new book form
 showBtn.addEventListener('click',()=>{
   container.classList.toggle('hidden')
 })
+
+let newBookTitle = document.querySelector('#title').value
+let newBookAuthor = document.querySelector('#author').value
+let newBookPages = document.querySelector('#pages').value
+
+let newBookForm = document.querySelector('#newbookform')
+
+console.log(newBookForm)
+
 
 displayBooks()
