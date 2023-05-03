@@ -55,11 +55,14 @@ newBookSubmit.addEventListener('click',(e)=>{
   e.preventDefault
   const formData = new FormData(newBookForm)
   const values = [...formData.entries()];
-  console.log(values);
-
+  let title = values[0][1];
+  let author = values[1][1];
+  let pages = values[2][1];
+  addBookToLibrary(new Book(title,author,pages))
+  console.log(myLibrary)
 })
 
-console.log(newBookForm)
+console.log(myLibrary)
 
 
 displayBooks()
