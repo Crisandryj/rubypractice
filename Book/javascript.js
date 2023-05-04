@@ -38,18 +38,18 @@ function displayAllBooks(){
   }
 }
 //display books from form
-function displayNewBook(newBook){
+function displayNewBook(myLibrary){
   let row = document.createElement('tr')
   let titleData = document.createElement('td')
   let authorData = document.createElement('td')
   let pagesData = document.createElement('td')
   let readData = document.createElement('td')
   table.appendChild(row)
-  row.appendChild(titleData).textContent = newBook['title']
-  row.appendChild(authorData).textContent = newBook['author']
-  row.appendChild(pagesData).textContent = newBook['pages']
-  row.appendChild(readData).textContent = newBook['read']
-  console.log(newBook)
+  let bookNum = myLibrary.length -1
+  row.appendChild(titleData).textContent = myLibrary[bookNum]['title']
+  row.appendChild(authorData).textContent = myLibrary[bookNum]['author']
+  row.appendChild(pagesData).textContent = myLibrary[bookNum]['pages']
+  row.appendChild(readData).textContent = myLibrary[bookNum]['read']
 }
 
 //selects new book button and form container
@@ -78,5 +78,8 @@ newBookSubmit.addEventListener('click',(e)=>{
   let pages = values[2][1];
   let read = values[3][1];
   console.log(read)
-  displayNewBook(new Book(title,author,parseInt(pages),read))
+  addBookToLibrary(new Book(title,author,parseInt(pages),read))
+  displayNewBook(myLibrary)
 })
+
+displayAllBooks()
