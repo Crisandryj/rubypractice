@@ -77,5 +77,6 @@ newBookSubmit.addEventListener('click',(e)=>{
   let author = values[1][1];
   let pages = values[2][1];
   let read = values[3][1];
-  displayNewBook(new Book(title,author,parseInt(pages)),read)
+  console.log(read)
+  displayNewBook(new Book(title,author,parseInt(pages),read))
 })
