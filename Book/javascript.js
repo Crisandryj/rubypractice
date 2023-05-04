@@ -22,7 +22,8 @@ addBookToLibrary(book3)
 
 let table = document.querySelector('table')
 
-function displayBooks(){
+//show all books in library
+function displayAllBooks(){
   for (let i = 0; i < myLibrary.length; i++) {
     let row = document.createElement('tr')
     let titleData = document.createElement('td')
@@ -36,7 +37,7 @@ function displayBooks(){
     row.appendChild(readData).textContent = myLibrary[i]['read']
   }
 }
-
+//display books from form
 function displayNewBook(newBook){
   let row = document.createElement('tr')
   let titleData = document.createElement('td')
@@ -48,6 +49,7 @@ function displayNewBook(newBook){
   row.appendChild(authorData).textContent = newBook['author']
   row.appendChild(pagesData).textContent = newBook['pages']
   row.appendChild(readData).textContent = newBook['read']
+  console.log(newBook)
 }
 
 //selects new book button and form container
@@ -74,9 +76,6 @@ newBookSubmit.addEventListener('click',(e)=>{
   let title = values[0][1];
   let author = values[1][1];
   let pages = values[2][1];
-  displayNewBook(new Book(title,author,parseInt(pages)))
+  let read = values[3][1];
+  displayNewBook(new Book(title,author,parseInt(pages)),read)
 })
-
-console.log(myLibrary)
-
-displayBooks()
