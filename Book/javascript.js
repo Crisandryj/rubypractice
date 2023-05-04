@@ -35,12 +35,21 @@ function displayNewBook(myLibrary){
   let authorData = document.createElement('td')
   let pagesData = document.createElement('td')
   let readData = document.createElement('td')
+  let remove = document.createElement("button")
   table.appendChild(row)
   let bookNum = myLibrary.length -1
   row.appendChild(titleData).textContent = myLibrary[bookNum]['title']
   row.appendChild(authorData).textContent = myLibrary[bookNum]['author']
   row.appendChild(pagesData).textContent = myLibrary[bookNum]['pages']
   row.appendChild(readData).textContent = myLibrary[bookNum]['read']
+  row.appendChild(remove).textContent = "Remove"
+  remove.addEventListener('click',()=>{
+    row.removeChild(titleData).textContent = myLibrary[bookNum]['title']
+    row.removeChild(authorData).textContent = myLibrary[bookNum]['author']
+    row.removeChild(pagesData).textContent = myLibrary[bookNum]['pages']
+    row.removeChild(readData).textContent = myLibrary[bookNum]['read']
+    row.removeChild(remove).textContent = "Remove"
+  })
 }
 
 //selects new book button and form container
