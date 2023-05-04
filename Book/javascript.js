@@ -43,6 +43,7 @@ function displayNewBook(myLibrary){
   row.appendChild(pagesData).textContent = myLibrary[bookNum]['pages']
   row.appendChild(readData).textContent = myLibrary[bookNum]['read']
   row.appendChild(remove).textContent = "Remove"
+  //remove book from table after click
   remove.addEventListener('click',()=>{
     row.removeChild(titleData).textContent = myLibrary[bookNum]['title']
     row.removeChild(authorData).textContent = myLibrary[bookNum]['author']
