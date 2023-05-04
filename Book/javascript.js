@@ -11,15 +11,6 @@ function addBookToLibrary(book) {
     myLibrary.push(book)
 }
 
-//creating books for library
-let book1 = new Book('Go','Cris',145,'no')
-let book2 = new Book('Carry','Javy',155,'no')
-let book3 = new Book('Thrid','Jany',165,'yes')
-
-addBookToLibrary(book1)
-addBookToLibrary(book2)
-addBookToLibrary(book3)
-
 let table = document.querySelector('table')
 
 //show all books in library
@@ -80,6 +71,7 @@ newBookSubmit.addEventListener('click',(e)=>{
   console.log(read)
   addBookToLibrary(new Book(title,author,parseInt(pages),read))
   displayNewBook(myLibrary)
+  newBookForm.reset()
 })
 
 displayAllBooks()
