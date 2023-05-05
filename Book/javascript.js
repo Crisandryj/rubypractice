@@ -1,24 +1,29 @@
 let myLibrary = [];
 
-function Book(title,author,pages,read) {
-    this.title = title,
+function Book(title, author, pages, read) {
+  this.title = title,
     this.author = author,
     this.pages = pages
-    this.read = read
+  this.read = read
 }
 
-Book.prototype.readCheck = function() {
-  console.log("hello")
+Book.prototype.readToggle = function() {
+  if (this.read === 'yes') {
+    this.read = 'No'
+  } else {
+    this.read = 'Yes'
+  }
+  console.log(this.read)
 }
 
 function addBookToLibrary(book) {
-    myLibrary.push(book)
+  myLibrary.push(book)
 }
 
 let table = document.querySelector('table')
 
 //show all books in library
-function displayAllBooks(){
+function displayAllBooks() {
   for (let i = 0; i < myLibrary.length; i++) {
     let row = document.createElement('tr')
     let titleData = document.createElement('td')
@@ -33,7 +38,7 @@ function displayAllBooks(){
   }
 }
 //display books from form
-function displayNewBook(myLibrary){
+function displayNewBook(myLibrary) {
   let row = document.createElement('tr')
   let titleData = document.createElement('td')
   let authorData = document.createElement('td')
@@ -41,14 +46,14 @@ function displayNewBook(myLibrary){
   let readData = document.createElement('td')
   let remove = document.createElement("button")
   table.appendChild(row)
-  let bookNum = myLibrary.length -1
+  let bookNum = myLibrary.length - 1
   row.appendChild(titleData).textContent = myLibrary[bookNum]['title']
   row.appendChild(authorData).textContent = myLibrary[bookNum]['author']
   row.appendChild(pagesData).textContent = myLibrary[bookNum]['pages']
   row.appendChild(readData).textContent = myLibrary[bookNum]['read']
   row.appendChild(remove).textContent = "Remove"
   //remove book from table after click
-  remove.addEventListener('click',()=>{
+  remove.addEventListener('click', () => {
     row.removeChild(titleData).textContent = myLibrary[bookNum]['title']
     row.removeChild(authorData).textContent = myLibrary[bookNum]['author']
     row.removeChild(pagesData).textContent = myLibrary[bookNum]['pages']
@@ -62,7 +67,7 @@ let showBtn = document.querySelector('.showbtn')
 let container = document.querySelector('.formContainer')
 
 //unhides the new book form
-showBtn.addEventListener('click',()=>{
+showBtn.addEventListener('click', () => {
   container.classList.toggle('hidden')
 })
 
@@ -74,7 +79,7 @@ let newBookForm = document.querySelector('#newbookform')
 let newBookSubmit = document.querySelector('#submit')
 
 
-newBookSubmit.addEventListener('click',(e)=>{
+newBookSubmit.addEventListener('click', (e) => {
   e.preventDefault
   const formData = new FormData(newBookForm)
   const values = [...formData.entries()];
@@ -83,15 +88,16 @@ newBookSubmit.addEventListener('click',(e)=>{
   let pages = values[2][1];
   let read = values[3][1];
   console.log(read)
-  addBookToLibrary(new Book(title,author,parseInt(pages),read))
+  addBookToLibrary(new Book(title, author, parseInt(pages), read))
   displayNewBook(myLibrary)
   newBookForm.reset()
 })
 
-let book1 = new Book('hi','bye',123,'yes')
+let book1 = new Book('hi', 'bye', 123, 'yes')
+let book2 = new Book('hi', 'bye', 123, 'no')
 
-book1.readCheck()
 
-console.log(Book.prototype)
+
+
 
 displayAllBooks()
