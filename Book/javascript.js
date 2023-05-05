@@ -7,6 +7,10 @@ function Book(title,author,pages,read) {
     this.read = read
 }
 
+Book.prototype.readCheck = function() {
+  console.log("hello")
+}
+
 function addBookToLibrary(book) {
     myLibrary.push(book)
 }
@@ -83,5 +87,11 @@ newBookSubmit.addEventListener('click',(e)=>{
   displayNewBook(myLibrary)
   newBookForm.reset()
 })
+
+let book1 = new Book('hi','bye',123,'yes')
+
+book1.readCheck()
+
+console.log(Book.prototype)
 
 displayAllBooks()
