@@ -45,6 +45,17 @@ function displayNewBook(myLibrary) {
   let pagesData = document.createElement('td')
   let readData = document.createElement('td')
   let remove = document.createElement("button")
+  //create read switch
+  let switchLabel = document.createElement("label")
+  switchLabel.classList.add('switch')
+  let switchInput = document.createElement("input")
+  switchInput.classList.add('checkbox')
+  let switchSpan = document.createElement("span")
+  switchSpan.classList.add('slider')
+
+  switchLabel.appendChild(switchInput)
+  switchLabel.appendChild(switchSpan)
+
   table.appendChild(row)
   let bookNum = myLibrary.length - 1
   row.appendChild(titleData).textContent = myLibrary[bookNum]['title']
@@ -52,6 +63,7 @@ function displayNewBook(myLibrary) {
   row.appendChild(pagesData).textContent = myLibrary[bookNum]['pages']
   row.appendChild(readData).textContent = myLibrary[bookNum]['read']
   row.appendChild(remove).textContent = "Remove"
+  row.appendChild(switchLabel)
   //remove book from table after click
   remove.addEventListener('click', () => {
     row.removeChild(titleData).textContent = myLibrary[bookNum]['title']
@@ -92,11 +104,6 @@ newBookSubmit.addEventListener('click', (e) => {
   displayNewBook(myLibrary)
   newBookForm.reset()
 })
-
-let book1 = new Book('hi', 'bye', 123, 'yes')
-let book2 = new Book('hi', 'bye', 123, 'no')
-
-
 
 
 
