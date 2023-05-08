@@ -71,7 +71,7 @@ function displayNewBook(myLibrary) {
     row.removeChild(pagesData).textContent = myLibrary[bookNum]['pages']
     row.removeChild(readData).textContent = myLibrary[bookNum]['read']
     row.removeChild(remove).textContent = "Remove"
-    switchLabel.removeChild(switchInput)
+    row.removeChild(switchLabel)
   })
 }
 
