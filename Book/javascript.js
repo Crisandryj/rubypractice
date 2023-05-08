@@ -49,7 +49,7 @@ function displayNewBook(myLibrary) {
   let switchLabel = document.createElement("label")
   switchLabel.classList.add('switch')
   let switchInput = document.createElement("input")
-  switchInput.classList.add('checkbox')
+  switchInput.setAttribute('type','checkbox')
   let switchSpan = document.createElement("span")
   switchSpan.classList.add('slider')
 
@@ -71,6 +71,7 @@ function displayNewBook(myLibrary) {
     row.removeChild(pagesData).textContent = myLibrary[bookNum]['pages']
     row.removeChild(readData).textContent = myLibrary[bookNum]['read']
     row.removeChild(remove).textContent = "Remove"
+    switchLabel.removeChild(switchInput)
   })
 }
 
