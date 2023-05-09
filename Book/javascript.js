@@ -60,10 +60,10 @@ function displayNewBook(myLibrary) {
 
   table.appendChild(row)
   let bookNum = myLibrary.length - 1
+  row.appendChild(remove).textContent = "Remove"
   row.appendChild(titleData).textContent = myLibrary[bookNum]['title']
   row.appendChild(authorData).textContent = myLibrary[bookNum]['author']
   row.appendChild(pagesData).textContent = myLibrary[bookNum]['pages']
-  row.appendChild(remove).textContent = "Remove"
   row.appendChild(switchLabel)
   switchInput.addEventListener('click', ()=>{
     myLibrary[bookNum].readToggle()

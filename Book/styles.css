@@ -6,6 +6,9 @@ h1{
   display: none;
 }
 
+table, th, td {
+  border: 1px solid;
+}
 /* The switch - the box around the slider */
 .switch {
   position: relative;
