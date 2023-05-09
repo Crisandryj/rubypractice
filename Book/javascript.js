@@ -64,7 +64,6 @@ function displayNewBook(myLibrary) {
   row.appendChild(titleData).textContent = myLibrary[bookNum]['title']
   row.appendChild(authorData).textContent = myLibrary[bookNum]['author']
   row.appendChild(pagesData).textContent = myLibrary[bookNum]['pages']
-  row.appendChild(readData).textContent = myLibrary[bookNum]['read']
   row.appendChild(remove).textContent = "Remove"
   row.appendChild(switchLabel)
   switchInput.addEventListener('click', ()=>{
@@ -74,10 +73,9 @@ function displayNewBook(myLibrary) {
 
   //remove book from table after click
   remove.addEventListener('click', () => {
-    row.removeChild(titleData).textContent = myLibrary[bookNum]['title']
-    row.removeChild(authorData).textContent = myLibrary[bookNum]['author']
-    row.removeChild(pagesData).textContent = myLibrary[bookNum]['pages']
-    row.removeChild(readData).textContent = myLibrary[bookNum]['read']
+    row.removeChild(titleData)
+    row.removeChild(authorData)
+    row.removeChild(pagesData)
     row.removeChild(remove).textContent = "Remove"
     row.removeChild(switchLabel)
   })
