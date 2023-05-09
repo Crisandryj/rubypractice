@@ -76,7 +76,7 @@ function displayNewBook(myLibrary) {
     row.removeChild(titleData)
     row.removeChild(authorData)
     row.removeChild(pagesData)
-    row.removeChild(remove).textContent = "Remove"
+    row.removeChild(remove)
     row.removeChild(switchLabel)
   })
 }
