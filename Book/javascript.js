@@ -105,8 +105,7 @@ newBookSubmit.addEventListener('click', (e) => {
   let title = values[0][1];
   let author = values[1][1];
   let pages = values[2][1];
-  let read = values[3][1];
-  addBookToLibrary(new Book(title, author, parseInt(pages), read))
+  addBookToLibrary(new Book(title, author, parseInt(pages)))
   displayNewBook(myLibrary)
   newBookForm.reset()
 })
