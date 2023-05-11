@@ -15,7 +15,6 @@ Book.prototype.readToggle = function() {
   }
 }
 
-
 function addBookToLibrary(book) {
   myLibrary.push(book)
 }
@@ -49,7 +48,7 @@ function displayNewBook(myLibrary) {
   let switchLabel = document.createElement("label")
   switchLabel.classList.add('switch')
   let switchInput = document.createElement("input")
-  switchInput.setAttribute('type','checkbox')
+  switchInput.setAttribute('type', 'checkbox')
   let switchSpan = document.createElement("span")
   switchSpan.classList.add('slider')
   switchLabel.appendChild(switchInput)
@@ -65,7 +64,7 @@ function displayNewBook(myLibrary) {
   row.appendChild(authorData).textContent = myLibrary[bookNum]['author']
   row.appendChild(pagesData).textContent = myLibrary[bookNum]['pages']
   row.appendChild(switchLabel)
-  switchInput.addEventListener('click', ()=>{
+  switchInput.addEventListener('click', () => {
     myLibrary[bookNum].readToggle()
     row.appendChild(readData).textContent = myLibrary[bookNum]['read']
   })
@@ -77,7 +76,9 @@ function displayNewBook(myLibrary) {
     row.removeChild(pagesData)
     row.removeChild(remove)
     row.removeChild(switchLabel)
-    if (myLibrary[bookNum]['read']) {row.removeChild(readData)}
+    if (myLibrary[bookNum]['read']) {
+      row.removeChild(readData)
+    }
   })
 }
 
