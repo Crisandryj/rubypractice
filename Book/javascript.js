@@ -54,9 +54,6 @@ function displayNewBook(myLibrary) {
   switchLabel.appendChild(switchInput)
   switchLabel.appendChild(switchSpan)
 
-
-
-
   table.appendChild(row)
   let bookNum = myLibrary.length - 1
   row.appendChild(remove).textContent = "Remove"
