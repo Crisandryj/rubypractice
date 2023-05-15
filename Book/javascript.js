@@ -108,6 +108,4 @@ newBookSubmit.addEventListener('click', (e) => {
   newBookForm.reset()
 })
 
-
-
 displayAllBooks()
