@@ -353,40 +353,30 @@ end
 
 
 def roman_to_int(s)
-  array = s.split("")
-  sum = 0
-  hash ={
-      'X' => 10,
-      'V' => 5,
-      'I' => 1,
-      'L' => 50,
-      'C' => 100,
-      'D' => 500,
-      'M' => 1000
+  hash = {
+    'I'=> 1,
+    'V'=> 5,
+    'X'=> 10,
+    'L'=> 50,
+    'C'=> 100,
+    'D'=> 500,
+    'M'=> 1000
   }
-    current_letter = ''
-    array.each_with_index do |letter,index|
-      current_letter =  letter
-      if current_letter != "I" && current_letter != "X" && current_letter != "C"
-
-        sum += hash[current_letter]
-        next
-      end
-
-      if hash[array[index+1]] == nil
-        sum += hash[current_letter]
-        return sum
-      end
-
-      if hash[current_letter] < hash[array[index+1]]
-        sum += (hash[array[index+1]] - hash[current_letter])
-      else
-        sum += hash[current_letter]
-      end
+  i = 0
+  sum = 0
+  while i < s.length
+    if i + 1 < s.length && hash[s[i]] < hash[s[i+1]]
+      sum += hash[s[i+1]] - hash[s[i]]
+      i += 1
+    else
+      sum += hash[s[i]]
     end
-    return sum
+  i += 1
+  end
+  sum
  end
 
 string = "MCMXCIV"
+
 
   p roman_to_int(string)
