@@ -363,23 +363,24 @@ def roman_to_int(s)
         'C' => 100
     }
     current_letter = ''
-    array.each_with_index do |l,index|
-      current_letter =  l
+    array.each_with_index do |letter,index|
+      current_letter =  letter
       if current_letter != 'I' || current_letter != 'X' || current_letter != 'C'
         sum += hash[current_letter]
+        next
       end
       if hash[array[index+1]] == nil
-        return
+        return sum
       end
       if hash[current_letter] > hash[array[index+1]]
         sum += hash[array[index+1]] - hash[current_letter]
       else
         sum += hash[array[index+1]] + hash[current_letter]
       end
-    p  sum
     end
+    return sum
  end
 
 string = "LV"
 
- roman_to_int(string)
+  p roman_to_int(string)
