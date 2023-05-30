@@ -355,13 +355,15 @@ end
 def roman_to_int(s)
   array = s.split("")
   sum = 0
-    hash ={
-        'X' => 10,
-        'V' => 5,
-        'I' => 1,
-        'L' => 50,
-        'C' => 100
-    }
+  hash ={
+      'X' => 10,
+      'V' => 5,
+      'I' => 1,
+      'L' => 50,
+      'C' => 100,
+      'D' => 500,
+      'M' => 1000
+  }
     current_letter = ''
     array.each_with_index do |letter,index|
       current_letter =  letter
@@ -374,9 +376,9 @@ def roman_to_int(s)
         return sum
       end
       if hash[current_letter] > hash[array[index+1]]
-        sum += hash[array[index+1]] - hash[current_letter]
+        sum += (hash[array[index+1]] - hash[current_letter])
       else
-        sum += hash[array[index+1]] + hash[current_letter]
+        sum += hash[current_letter]
       end
     end
     return sum
