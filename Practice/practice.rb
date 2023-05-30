@@ -367,15 +367,18 @@ def roman_to_int(s)
     current_letter = ''
     array.each_with_index do |letter,index|
       current_letter =  letter
-      if current_letter != 'I' || current_letter != 'X' || current_letter != 'C'
+      if current_letter != "I" && current_letter != "X" && current_letter != "C"
+
         sum += hash[current_letter]
         next
       end
+
       if hash[array[index+1]] == nil
         sum += hash[current_letter]
         return sum
       end
-      if hash[current_letter] > hash[array[index+1]]
+
+      if hash[current_letter] < hash[array[index+1]]
         sum += (hash[array[index+1]] - hash[current_letter])
       else
         sum += hash[current_letter]
