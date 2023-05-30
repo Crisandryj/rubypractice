@@ -370,6 +370,7 @@ def roman_to_int(s)
         next
       end
       if hash[array[index+1]] == nil
+        sum += hash[current_letter]
         return sum
       end
       if hash[current_letter] > hash[array[index+1]]
@@ -381,6 +382,6 @@ def roman_to_int(s)
     return sum
  end
 
-string = "LV"
+string = "MCMXCIV"
 
   p roman_to_int(string)
