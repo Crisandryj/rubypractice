@@ -365,21 +365,21 @@ def roman_to_int(s)
     current_letter = ''
     array.each_with_index do |l,index|
       current_letter =  l
-      if current_letter == 'I' || current_letter == 'X' || current_letter == 'C'
-        if hash[array[index+1]] != nil
-          if hash[current_letter] > hash[array[index+1]]
-            sum += hash[array[index+1]] - hash[current_letter]
-          else
-            sum += hash[array[index+1]] + hash[current_letter]
-          end
-        else
-          sum+= hash[current_letter]
-        end
-      
+      if current_letter != 'I' || current_letter != 'X' || current_letter != 'C'
+        sum += hash[current_letter]
       end
-      p sum
+      if hash[array[index+1]] == nil
+        return
+      end
+      if hash[current_letter] > hash[array[index+1]]
+        sum += hash[array[index+1]] - hash[current_letter]
+      else
+        sum += hash[array[index+1]] + hash[current_letter]
+      end
+    p  sum
+    end
  end
 
-string = "XXLV"
+string = "LV"
 
  roman_to_int(string)
