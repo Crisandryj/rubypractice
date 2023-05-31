@@ -384,13 +384,16 @@ strs = ["flower","flow","flight"]
 
 
 def longest_common_prefix(strss)
-  i = 0
-  hash = {}
-  strss.map do |n| 
-    hash[i] = n
-    i+= 1
+prefix = ""
+length = strss.map {|n| n.length}.min
+i = 0
+  while i < length
+    char = strss[0][i]
+    strss.each {|word| return prefix if word[i] != char}
+    prefix += char
+    i += 1
   end
-p hash
+prefix
 end
 
 p longest_common_prefix(strs)
