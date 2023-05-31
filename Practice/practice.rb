@@ -378,14 +378,19 @@ def roman_to_int(s)
 
 string = "MCMXCIV"
 
-strss = ["flower","flow","flight"]
+strs = ["flower","flow","flight"]
 
 
 
 
-def longest_common_prefix(strs)
-  
-
+def longest_common_prefix(strss)
+  i = 0
+  hash = {}
+  strss.map do |n| 
+    hash[i] = n
+    i+= 1
+  end
+p hash
 end
 
-p longest_common_prefix(strss)
+p longest_common_prefix(strs)
