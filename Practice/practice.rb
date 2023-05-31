@@ -364,7 +364,7 @@ def roman_to_int(s)
   }
   i = 0
   sum = 0
-  while i < s.length
+  while i < s.length 
     if i + 1 < s.length && hash[s[i]] < hash[s[i+1]]
       sum += hash[s[i+1]] - hash[s[i]]
       i += 1
@@ -378,5 +378,14 @@ def roman_to_int(s)
 
 string = "MCMXCIV"
 
+strss = ["flower","flow","flight"]
 
-  p roman_to_int(string)
+
+
+
+def longest_common_prefix(strs)
+  
+
+end
+
+p longest_common_prefix(strss)
