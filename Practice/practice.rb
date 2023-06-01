@@ -405,10 +405,10 @@ array = s.split("")
 array.each_with_index{ |n,i| return false if n == "(" && !array.include?(")")
 return false if n == "(" && array.find_index(')') < i
 }
-array.each{ |n| return false if n == "{" && !array.include?("}")
+array.each_with_index{ |n,i| return false if n == "{" && !array.include?("}")
 return false if n == "{" && array.find_index('}') < i
 }
-array.each{ |n| return false if n == "[" && !array.include?("]")
+array.each_with_index{ |n,i| return false if n == "[" && !array.include?("]")
   return false if n == "{" && array.find_index(']') < i
 }
 return true
