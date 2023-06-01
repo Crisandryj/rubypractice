@@ -396,18 +396,22 @@ prefix
 end
 
 #'(', ')', '{', '}', '[' and ']'
-s = "()[}"
+s = ")("
+array = s.split("")
 
 def is_valid(s)
- #check if every bracket has a corressponding bracket
+ #check if every bracket has a corresponding bracket
 array = s.split("")
-array.each{ |n| return false if n == "(" && !array.include?(")")}
-array.each{ |n| return false if n == "{" && !array.include?("}")}
-array.each{ |n| return false if n == "[" && !array.include?("]")}
-
+array.each_with_index{ |n,i| return false if n == "(" && !array.include?(")")
+return false if n == "(" && array.find_index(')') < i
+}
+array.each{ |n| return false if n == "{" && !array.include?("}")
+return false if n == "{" && array.find_index('}') < i
+}
+array.each{ |n| return false if n == "[" && !array.include?("]")
+  return false if n == "{" && array.find_index(']') < i
+}
 return true
-
- #check if bracket are in correct order
 end
 
 p is_valid(s)
