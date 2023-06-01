@@ -376,7 +376,6 @@ def roman_to_int(s)
   sum
  end
 
-string = "MCMXCIV"
 
 strs = ["flower","flow","flight"]
 
@@ -396,4 +395,19 @@ i = 0
 prefix
 end
 
-p longest_common_prefix(strs)
+#'(', ')', '{', '}', '[' and ']'
+s = "()[}"
+
+def is_valid(s)
+ #check if every bracket has a corressponding bracket
+array = s.split("")
+array.each{ |n| return false if n == "(" && !array.include?(")")}
+array.each{ |n| return false if n == "{" && !array.include?("}")}
+array.each{ |n| return false if n == "[" && !array.include?("]")}
+
+return true
+
+ #check if bracket are in correct order
+end
+
+p is_valid(s)
