@@ -398,22 +398,24 @@
 require 'byebug'
 
 #'(', ')', '{', '}', '[' and ']'
-s = "()[]{}"
+s = "{[]}"
 array = s.split("")
-
+stack = []
 def is_valid(s)
+  return  s.empty?
   #check if every bracket has a corresponding bracket
-  array = s.split("")
-  array.each_with_index{ |n,i| return false if n == "(" && !array.include?(")")
-    return false if n == "(" && array.find_index(')') < i
-  }
-  array.each_with_index{ |n,i| return false if n == "{" && !array.include?("}")
-    return false if n == "{" && array.find_index('}') < i
-  }
-  array.each_with_index{ |n,i| return false if n == "[" && !array.include?("]")
-    return false if n == "[" && array.find_index(']') < i
-  }
-  return true
+  array.each do |c|
+    case c 
+    when '(' || '{' || '['
+      stack.push(c)
+    when ')'
+      return false if stack.pop != '('
+    when '}'
+      return false if stack.pop != '{'
+    when ']'
+      return false if stack.pop != '['
+  end
+  return stack.empty?
 end
 
 p is_valid(s)
