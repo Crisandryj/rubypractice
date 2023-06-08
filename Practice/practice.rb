@@ -421,27 +421,4 @@
 
 
 
-def merge(list1,list2)
-  list = []
-  i = 0
-  output = []
-  while i < list1.length
-    if list1[i] < list2[i]
-      output.push << list1[i]
-    else
-      output << list2[i]
-    end
-    i+=1
-  end 
-   p output
-end
 
-def merge_two_lists(list1, list2)
-  
-  merge(list1,list2)
-end
-
-listA = [5,6,3]
-listB = [1,2,4]
-
-merge(listA,listB)
