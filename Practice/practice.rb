@@ -395,27 +395,53 @@
 # prefix
 # end
 
-require 'byebug'
+# require 'byebug'
 
-#'(', ')', '{', '}', '[' and ']'
-s = "{[]}"
-array = s.split("")
-stack = []
-def is_valid(s)
-  return  s.empty?
-  #check if every bracket has a corresponding bracket
-  array.each do |c|
-    case c 
-    when '(' || '{' || '['
-      stack.push(c)
-    when ')'
-      return false if stack.pop != '('
-    when '}'
-      return false if stack.pop != '{'
-    when ']'
-      return false if stack.pop != '['
-  end
-  return stack.empty?
+# #'(', ')', '{', '}', '[' and ']'
+# s = "{[]}"
+# array = s.split("")
+# stack = []
+# def is_valid(s)
+#   return  s.empty?
+#   #check if every bracket has a corresponding bracket
+#   array.each do |c|
+#     case c 
+#     when '(' || '{' || '['
+#       stack.push(c)
+#     when ')'
+#       return false if stack.pop != '('
+#     when '}'
+#       return false if stack.pop != '{'
+#     when ']'
+#       return false if stack.pop != '['
+#   end
+#   return stack.empty?
+# end
+
+
+
+
+def merge(list1,list2)
+  list = []
+  i = 0
+  output = []
+  while i < list1.length
+    if list1[i] < list2[i]
+      output.push << list1[i]
+    else
+      output << list2[i]
+    end
+    i+=1
+  end 
+   p output
 end
 
-p is_valid(s)
+def merge_two_lists(list1, list2)
+  
+  merge(list1,list2)
+end
+
+listA = [5,6,3]
+listB = [1,2,4]
+
+merge(listA,listB)
