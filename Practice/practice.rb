@@ -422,24 +422,25 @@
 array = [5,6,7,8,9,10,14,16,19]
 
 
-def binary_search(arry,target)
-  start = 0
-  end_point = (arry.length) - 1
+
+# def binary_search(arry,target)
+#   start = 0
+#   end_point = (arry.length) - 1
  
-  while start < end_point
-    mid = (start + end_point)/2
-    p mid
-    p start
-    if arry[mid] == target
-      return true
-    elsif arry[mid] < target
-      start = mid + 1
-    else
-    end_point = mid -1 
-    end 
-  end
-  false
+#   while start < end_point
+#     mid = (start + end_point)/2
+#     p mid
+#     p start
+#     if arry[mid] == target
+#       return true
+#     elsif arry[mid] < target
+#       start = mid + 1
+#     else
+#     end_point = mid -1 
+#     end 
+#   end
+#   false
 end
 
-p binary_search(array,22)
+
 
