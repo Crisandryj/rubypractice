@@ -441,9 +441,22 @@ array = [5,6,7,8,9,10,14,16,19]
 #   end
 
 def remove_duplicates(nums)
+  array = []
+  i = 0
  #go thru each num in nums
- #add num to array
- #remove from nums if already in array
- #push _ to replace num
- #count each time num is removed
+  nums.each do |n|
+    if array.include?(n)
+      nums.pop(n)
+       #push _ to replace num
+       nums << '_'
+      #count each time num is removed
+      i += 1
+    else
+     #add num to array
+     array << n
+  end 
 end
+
+numss = [1,1,2,2,3,4,5]
+
+p def remove_duplicates(numms)
