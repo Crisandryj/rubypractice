@@ -441,5 +441,9 @@ array = [5,6,7,8,9,10,14,16,19]
 #   end
 
 def remove_duplicates(nums)
-  current_num 
+ #go thru each num in nums
+ #add num to array
+ #remove from nums if already in array
+ #push _ to replace num
+ #count each time num is removed
 end
