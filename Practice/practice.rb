@@ -454,9 +454,12 @@ def remove_duplicates(nums)
     else
      #add num to array
      array << n
+     p array
+    end
   end 
+  nums
 end
 
 numss = [1,1,2,2,3,4,5]
 
-p def remove_duplicates(numms)
+p remove_duplicates(numss)
