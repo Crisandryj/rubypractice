@@ -439,8 +439,9 @@ array = [5,6,7,8,9,10,14,16,19]
 #     end_point = mid -1 
 #     end 
 #   end
-#   false
-end
 
+def merge(list1, list2)
+  
+end
 
 
