@@ -440,8 +440,6 @@ array = [5,6,7,8,9,10,14,16,19]
 #     end 
 #   end
 
-def merge(list1, list2)
-  
+def remove_duplicates(nums)
+  current_num 
 end
-
-
