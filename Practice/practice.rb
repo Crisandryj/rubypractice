@@ -441,7 +441,14 @@ array = [5,6,7,8,9,10,14,16,19]
 #   end
 
 def remove_duplicates(nums)
-  
+  current = 0
+  unq = []
+  nums.each_with_index do |n,i|
+   if nums[i] != nums[i+1]
+    unq << nums[i] 
+   end 
+  end
+  return unq
 end
 
 arry = [1,1,2,2,3,4,5]
