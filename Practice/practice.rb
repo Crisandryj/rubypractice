@@ -441,14 +441,7 @@ array = [5,6,7,8,9,10,14,16,19]
 #   end
 
 def remove_duplicates(nums)
-  i = 0
-  nums.each do |n|
-    if nums[n] == nums[n+1]
-      nums[n] == nil
-      i +=1 
-    end
-  end
- return i
+  
 end
 
 numss = [1,1,2,2,3,4,5]
