@@ -444,7 +444,7 @@ def remove_duplicates(nums)
   
 end
 
-numss = [1,1,2,2,3,4,5]
+arry = [1,1,2,2,3,4,5]
 
 
-p remove_duplicates(numss)
+p remove_duplicates(arry)
