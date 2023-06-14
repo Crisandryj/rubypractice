@@ -451,7 +451,6 @@ def remove_duplicates(nums)
   return unq
 end
 
-arry = [1,1,2,2,3,4,5]
+arry = [0,0,1,1,1,2,2,3,3,4]
 
 
-p remove_duplicates(arry)
